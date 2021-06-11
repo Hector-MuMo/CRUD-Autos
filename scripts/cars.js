@@ -30,13 +30,6 @@ const d = document,
   $fragment = d.createDocumentFragment(),
   $template = d.querySelector("template").content;
 
-/* Cargamos los usuarios una unica vez en el localStorage */
-d.addEventListener("mousemove", stopEvent);
-function stopEvent(e) {
-  e.target.removeEventListener(e.type, stopEvent);
-  w.localStorage.setItem("inventory", JSON.stringify(carsInventory));
-}
-
 let cars = JSON.parse(w.localStorage.getItem("inventory"));
 console.log(cars);
 
@@ -65,7 +58,14 @@ const readInventory = () => {
   $table.appendChild($fragment);
 };
 
-d.addEventListener("DOMContentLoaded", readInventory);
+d.addEventListener("DOMContentLoaded", readInventory, stopEvent);
+
+/* Cargamos los usuarios una unica vez en el localStorage */
+
+function stopEvent(e) {
+  e.target.removeEventListener(e.type, stopEvent);
+  w.localStorage.setItem("inventory", JSON.stringify(carsInventory));
+}
 
 /* Formulario */
 d.addEventListener("submit", (e) => {
