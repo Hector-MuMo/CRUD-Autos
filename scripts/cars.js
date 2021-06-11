@@ -34,7 +34,7 @@ const d = document,
 d.addEventListener("mousemove", stopEvent);
 function stopEvent(e) {
   e.target.removeEventListener(e.type, stopEvent);
-  w.localStorage.setItem("usersList", JSON.stringify(carsInventory));
+  w.localStorage.setItem("inventory", JSON.stringify(carsInventory));
 }
 
 let cars = JSON.parse(w.localStorage.getItem("inventory"));
