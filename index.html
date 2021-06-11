@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/cars.css">
+  <title>CRUD Cars</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header-container">
+      <figure>
+        <img src="https://image.freepik.com/vector-gratis/logotipo-realista-coche-metalico_52683-36046.jpg" alt="Logo">
+      </figure>
+      <article>
+        <h1>Agencia de Autos</h1>
+        <h3>Inventario</h3>
+      </article>
+    </header>
+    <!-- Aside-form -->
+    <aside class="aside-container">
+      <video src="./assets/pexels-tim.mp4" autoplay loop></video>
+      <form action="" class="aside-form">
+        <article class="form-title">
+          <h3>Nuevo Auto</h3>
+        </article>
+        <label for="brand">Marca</label>
+        <input type="text" name="brand" id="brand" required placeholder="Nissan">
+        <label for="model">Modelo</label>
+        <input type="text" name="model" id="model" required placeholder="March">
+        <label for="color">Color</label>
+        <input type="text" name="color" id="color" required placeholder="Turquesa">
+        <label for="year">Año</label>
+        <input type="text" name="year" id="year" required placeholder="2018">
+        <label for="price">Precio</label>
+        <input type="text" name="price" id="price" required placeholder="$150,000">
+        <label for="photo">Enlace Foto</label>
+        <input type="text" name="photo" id="photo" required placeholder="Foto del Auto">
+        <input type="submit" id="add-btn" value="Agregar Auto">
+        <input type="hidden" name="id">
+      </form>
+    </aside>
+    <!-- Main body -->
+    <main class="main-container">
+      <!-- Table-area -->
+      <section class="table-area">
+      </section>
+    </main>
+  </div>
+
+  <!-- Template -->
+  <template>
+    <div class="car-container">
+      <figure>
+        <img src="" alt="Auto" class="car-photo">
+      </figure>
+    </div>
+    <article class="thead">
+      <span>Marca</span>
+      <span>Modelo</span>
+      <span>Color</span>
+      <span>Año</span>
+      <span>Precio</span>
+      <span>Edición</span>
+    </article>
+    <article class="trow">
+      <span class="brand"></span>
+      <span class="model"></span>
+      <span class="color"></span>
+      <span class="year"></span>
+      <span class="price"></span>
+      <span class="action-btns">
+        <button class="edit-btn">
+          <i class="fas fa-pen-square"></i>
+        </button>
+        <button class="delete-btn">
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </span>
+    </article>
+  </template>
+
+  <script src="https://kit.fontawesome.com/ed8e03132d.js" crossorigin="anonymous"></script>
+  <script src="./scripts/cars.js"></script>
+</body>
+
+</html>
