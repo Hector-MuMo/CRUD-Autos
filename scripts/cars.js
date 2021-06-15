@@ -35,37 +35,34 @@ console.log(cars);
 
 //Read-GET
 const readInventory = () => {
-  cars.forEach((car, index) => {
-    $template.querySelector(".brand").textContent = car.brand;
-    $template.querySelector(".model").textContent = car.model;
-    $template.querySelector(".color").textContent = car.color;
-    $template.querySelector(".year").textContent = car.year;
-    $template.querySelector(".price").textContent = car.price;
-    $template.querySelector(".car-photo").setAttribute("src", `${car.photo}`);
-    $template.querySelector(".edit-btn i").dataset.brand = car.brand;
-    $template.querySelector(".edit-btn i").dataset.model = car.model;
-    $template.querySelector(".edit-btn i").dataset.color = car.color;
-    $template.querySelector(".edit-btn i").dataset.year = car.year;
-    $template.querySelector(".edit-btn i").dataset.price = car.price;
-    $template.querySelector(".edit-btn i").dataset.photo = car.photo;
-    $template.querySelector(".edit-btn i").dataset.id = index;
-    $template.querySelector(".delete-btn i").dataset.id = index;
+  if (cars === null) {
+    cars = [];
+  } else {
+    cars.forEach((car, index) => {
+      $template.querySelector(".brand").textContent = car.brand;
+      $template.querySelector(".model").textContent = car.model;
+      $template.querySelector(".color").textContent = car.color;
+      $template.querySelector(".year").textContent = car.year;
+      $template.querySelector(".price").textContent = car.price;
+      $template.querySelector(".car-photo").setAttribute("src", `${car.photo}`);
+      $template.querySelector(".edit-btn i").dataset.brand = car.brand;
+      $template.querySelector(".edit-btn i").dataset.model = car.model;
+      $template.querySelector(".edit-btn i").dataset.color = car.color;
+      $template.querySelector(".edit-btn i").dataset.year = car.year;
+      $template.querySelector(".edit-btn i").dataset.price = car.price;
+      $template.querySelector(".edit-btn i").dataset.photo = car.photo;
+      $template.querySelector(".edit-btn i").dataset.id = index;
+      $template.querySelector(".delete-btn i").dataset.id = index;
 
-    const $clone = $template.cloneNode(true);
-    $fragment.appendChild($clone);
-  });
+      const $clone = $template.cloneNode(true);
+      $fragment.appendChild($clone);
+    });
 
-  $table.appendChild($fragment);
+    $table.appendChild($fragment);
+  }
 };
 
-d.addEventListener("DOMContentLoaded", readInventory, stopEvent);
-
-/* Cargamos los usuarios una unica vez en el localStorage */
-
-function stopEvent(e) {
-  e.target.removeEventListener(e.type, stopEvent);
-  w.localStorage.setItem("inventory", JSON.stringify(carsInventory));
-}
+d.addEventListener("DOMContentLoaded", readInventory);
 
 /* Formulario */
 d.addEventListener("submit", (e) => {

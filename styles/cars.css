@@ -98,7 +98,8 @@ img {
   height: 100vh;
   margin: 0.5rem;
   overflow: hidden;
-  position: relative;
+  position: sticky;
+  top: 0.5rem;
 }
 
 .aside-container > .aside-form {
