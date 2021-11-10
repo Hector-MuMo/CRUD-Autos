@@ -6,7 +6,7 @@ const carsInventory = [
     year: "2018",
     price: "$263,000",
     photo:
-      "https://images.kavak.services/images/43717/mazda-3-hb-i-touring2018-frontal-lateral-piloto-cercana-1618462465399.jpg?d=756x434",
+      "",
     id: 0,
   },
   {
@@ -16,7 +16,7 @@ const carsInventory = [
     year: "2018",
     price: "$445,000",
     photo:
-      "https://images.kavak.services/images/43788/EXTERIOR-frontal_lateral_piloto_cercana-16178954215625.jpg?d=540x310",
+      "",
     id: 1,
   },
 ];
